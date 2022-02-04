@@ -3,8 +3,8 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fafafa;
@@ -15,4 +15,57 @@ body {
 img {
   display: block;
   max-width: 100%;
+}
+
+.timer {
+  font-family: sans-serif;
+  color: rgb(235, 241, 241);
+  display: flex;
+  margin-top: 20px;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+}
+
+.field {
+  padding: 10px;
+  border-radius: 3px;
+  background: #e78709;
+  display: inline-block;
+}
+
+.field:not(:last-child) {
+  margin-right: 20px;
+}
+
+.value {
+  padding: 15px;
+  border-radius: 3px;
+  background: #811527;
+  display: inline-block;
+}
+
+.label {
+  display: block;
+  padding-top: 5px;
+  font-size: 16px;
+}
+
+#datetime-picker {
+  border: 2px solid #9e9e9e;
+  color: #000000;
+  padding: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: 11px;
+  font-family: sans-serif;
+  background: #fff;
+}
+
+button {
+  padding: 3px 10px;
+  border: 2px solid #9e9e9e;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Montserrat;
 }
