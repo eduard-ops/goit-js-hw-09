@@ -25,14 +25,11 @@ function setPromise(evt) {
 
 function generatePromises(amountValue, firstDelayInputValue) {
   let position = null;
-
   for (let i = 0; i < amountValue; i++) {
     if (i > 0) {
       firstDelayInputValue += delayTime;
     }
-
     position += 1;
-
     createPromise(position, firstDelayInputValue)
       .then(({ position, delayTime }) => {
         Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delayTime}ms`);
@@ -40,18 +37,18 @@ function generatePromises(amountValue, firstDelayInputValue) {
       .catch(({ position, delayTime }) => {
         Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delayTime}ms`);
       });
-
-    function createPromise(position, delayTime) {
-      const shouldResolve = Math.random() > 0.3;
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          if (shouldResolve) {
-            resolve({ position, delayTime });
-          } else {
-            reject({ position, delayTime });
-          }
-        }, firstDelayInputValue);
-      });
-    }
   }
+}
+
+function createPromise(position, delayTime) {
+  const shouldResolve = Math.random() > 0.3;
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (shouldResolve) {
+        resolve({ position, delayTime });
+      } else {
+        reject({ position, delayTime });
+      }
+    }, delayTime);
+  });
 }
